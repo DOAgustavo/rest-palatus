@@ -1,8 +1,11 @@
 import { FaWhatsapp, FaInstagram, FaHome } from 'react-icons/fa';
+import NavButton from '../buttons/NavButton';
 
 export default function NavBar() {
   return (
     <div className="navbar bg-brown px-3 text-white">
+
+      
       <div className="container d-flex flex-wrap justify-content-between align-items-center">
         {/* Logo */}
         <div className="navbar-brand d-flex align-items-center mb-2 mb-md-0">
@@ -10,7 +13,7 @@ export default function NavBar() {
             <FaHome size={30} className="me-2" />
           </a>
         </div>
-
+      <NavButton />
         {/* Links */}
         <section>
           <ul className="d-flex flex-wrap list-unstyled m-0 justify-content-center">

@@ -2,6 +2,9 @@
 .bg-brown {
   background-color: #b46329; 
 }
+.bg-branco{
+  background-color: #e9e9e9;
+}
 
 /* Estilo para links na navbar */
 .navbar a {
