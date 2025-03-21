@@ -1,6 +1,6 @@
 export default function SobreNos() {
     return (
-      <div className="  text-black" style={{height: '90vh', background: 'linear-gradient(180deg, #ededed 90%,#b46329 10%)'
+      <div className="  text-black " style={{height: '100vh', background: 'linear-gradient(180deg, #ededed 90%,#b46329 10%)'
         ,
       }}>
         <div className="container text-center">

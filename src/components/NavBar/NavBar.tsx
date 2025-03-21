@@ -1,26 +1,17 @@
-import { FaWhatsapp, FaInstagram, FaHome } from 'react-icons/fa';
-import NavButton from '../buttons/NavButton';
+import { FaWhatsapp, FaInstagram, FaHome } from "react-icons/fa";
+import NavButton from "../buttons/NavButton";
 
 export default function NavBar() {
   return (
-   
-    
-    <header  className="navbar bg-brown px-3 text-white">
-
-      
-      <div className="container d-flex flex-wrap justify-content-between align-items-center">
-        {/* Logo */}
-        <div className="navbar-brand d-flex align-items-center mb-2 mb-md-0">
-          <a href="#">
-            <FaHome size={30} className="me-2" />
-          </a>
-        </div>
-      
-        {/* Links */}
+    <header className="navbar d-flex row justify-content-between align-items-end bg-brown p-3">
+      {/* Botão NavButton visível apenas em telas pequenas */}
+      <NavButton className="d-flex d-lg-none justify-content-center align-items-center">
         <section>
-          <ul className="d-flex flex-wrap list-unstyled m-0 justify-content-center ">
-            <li className="mx- mb-1 mb-md-0 ">
-              <a className='' href="#">Sobre nós</a>
+          <ul className="d-flex list-unstyled m-0 justify-content-center">
+            <li className="mx- mb-1 mb-md-0">
+              <a className="" href="#">
+                Sobre nós
+              </a>
             </li>
             <li className="mx-5 mb-1 mb-md-0">
               <a href="#">Cardápio</a>
@@ -39,12 +30,8 @@ export default function NavBar() {
               </a>
             </li>
           </ul>
-          
         </section>
-        
-      </div>
-      <NavButton/>
+      </NavButton>
     </header>
-    
   );
 }
