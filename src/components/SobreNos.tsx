@@ -1,0 +1,15 @@
+export default function SobreNos() {
+    return (
+      <section className="bg-light py-5 text-black">
+        <div className="container text-center">
+          <h2 className="mb-4">Sobre Nós</h2>
+          <p className="mb-3">
+            Bem-vindo ao nosso restaurante! Somos apaixonados por oferecer pratos deliciosos e um ambiente acolhedor para nossos clientes.
+          </p>
+          <p>
+            Nossa missão é proporcionar uma experiência gastronômica única, com ingredientes frescos e receitas feitas com amor.
+          </p>
+        </div>
+      </section>
+    );
+  }
