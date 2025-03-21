@@ -18,3 +18,17 @@
   text-decoration: none;
   
 }
+ul {
+  list-style: none; /* Remove os marcadores de todas as <ul> */
+  padding: 0; /* Remove o padding padrão */
+  margin: 0; /* Remove a margem padrão */
+}
+
+.nav-link:focus
+ {
+  color: white; /* Garante que a cor permaneça branca após o clique */
+}
+
+.nav-link:hover {
+  color: #f0a500; 
+}
