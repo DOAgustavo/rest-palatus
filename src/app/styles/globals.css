@@ -1,0 +1,16 @@
+/* Cor de fundo marrom para a navbar */
+.bg-brown {
+  background-color: #b46329; 
+}
+
+/* Estilo para links na navbar */
+.navbar a {
+ 
+  text-decoration: none;
+  color: white;
+}
+
+.navbar li{
+  margin: 0 3rem; 
+}
+

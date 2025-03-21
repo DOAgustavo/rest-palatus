@@ -24,7 +24,7 @@ export default function publicLayout({
 <html>
       <body 
         className="bg-dark text-white font-sans-serif ">
-          <h1>layout dentro de publica</h1>
+         
         {children}
       </body>
    </html>
