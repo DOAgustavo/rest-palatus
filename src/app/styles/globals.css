@@ -1,34 +1,645 @@
-/* Cor de fundo marrom para a navbar */
-.bg-brown {
-  background-color: #b46329; 
+@import url('https://fonts.googleapis.com/css?family=Alex+Brush|Overpass+Mono:600,700');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+/* Definição de variáveis CSS para fontes e cores */
+:root {
+  --font-overpass-mono: 'Overpass Mono', monospace;
+  --font-pt-sans: 'PT Sans', sans-serif;
+  --font-alex-brush: 'Alex Brush', cursive;
+  --color-light-brown: rgb(190, 128, 64);
+  --color-white: rgb(255, 255, 255);
+  --color-black: rgb(0, 0, 0);
+  --color-dark-gray: rgb(20, 20, 20);
+  --color-light-gray: rgb(35, 35, 35);
 }
-.bg-branco{
-  background-color: #e9e9e9;
+/* Estilo global para o corpo da página */
+body {
+  
+  font-family: var(--font-pt-sans);
+  color: var(--color-white);
+  background-color: var(--color-dark-gray);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+/* Estilo para cabeçalhos */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-family: var(--font-overpass-mono);
+}
+/* Estilo para parágrafos */
+p {
+  margin: 0;
+  line-height: 1.6;
+}
+/* Estilo para links */
+a {
+  text-decoration: none;
+  color: var(--color-light-brown);
+  transition: color 0.3s ease;
 }
 
-/* Estilo para links na navbar */
-.navbar a {
- 
-  text-decoration: none;
+a:hover {
+  color: var(--color-white);
+}
+/* Estilo para botões */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+/* Estilo para listas */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* Estilo para o cabeçalho */
+/* Estilo para o cabeçalho */
+header {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent),
+    url('http://zigis.com.au/wp-content/uploads/2014/05/holiday2013_front.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-white);
+}
+
+/* Estilo para o menu de navegação */
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  color: var(--color-white);
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  list-style: none; /* Remove os marcadores da lista */
+}
+
+nav a {
+  font-family: var(--font-overpass-mono);
+  color: var(--color-white); /* Define o texto dos links como branco */
+  text-transform: uppercase;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--color-light-brown); /* Cor ao passar o mouse */
+}
+
+nav div.show {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Esconde o botão hambúrguer em telas grandes */
+.nav-button {
+  display: none;
+}
+
+/* Responsividade para telas menores */
+@media screen and (max-width: 768px) {
+  header {
+    min-height: 50vh; /* Reduz a altura mínima */
+    background-size: contain; /* Ajusta o tamanho do fundo */
+  }
+
+  nav {
+    flex-direction: column; /* Alinha os itens verticalmente */
+    padding: 10px;
+  }
+
+  nav ul {
+    flex-direction: column; /* Lista em coluna */
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 14px; /* Reduz o tamanho da fonte */
+    padding: 8px; /* Ajusta o espaçamento interno */
+  }
+
+  /* Exibe o botão hambúrguer em telas menores */
+  .nav-button {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--color-white);
+    cursor: pointer;
+    z-index: 1001; /* Certifique-se de que o botão está acima de outros elementos */
+  }
+}
+
+/* Responsividade para telas muito pequenas */
+@media screen and (max-width: 425px) {
+  header {
+    min-height: 40vh; /* Reduz ainda mais a altura mínima */
+    text-align: center; /* Centraliza o texto */
+  }
+
+  nav {
+    padding: 5px;
+  }
+
+  nav ul {
+    gap: 5px; /* Reduz o espaçamento entre os itens */
+  }
+
+  nav a {
+    font-size: 12px; /* Reduz o tamanho da fonte */
+    padding: 5px; /* Ajusta o espaçamento interno */
+  }
+}
+/* Estilo para o conteúdo centralizado */
+.center {
+  line-height: 0;
+  margin: auto;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.center h1 {
+  font-family: var(--font-alex-brush) !important;
+  color: var(--color-light-brown);
+  font-size: 80px;
+  margin-bottom: 34px;
+}
+
+.center h2 {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 28px;
+}
+/* Estilo para o asterisco decorativo */
+.center #asterisk {
+  color: var(--color-light-brown);
+  line-height: 0.5;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.center #asterisk:before,
+.center #asterisk:after {
+  content: "";
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  height: 1px;
+  width: 0%;
+  opacity: 0;
+  background: var(--color-white);
+}
+
+.center #asterisk:before {
+  margin-right: 10px;
+}
+
+.center #asterisk:after {
+  margin-left: 10px;
+}
+/* Estilo para parágrafos centralizados */
+.center p {
+  text-transform: uppercase;
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}    
+
+/* Estilo para fontes personalizadas */
+.custom-font {
+  font-family: var(--font-alex-brush);
+  color: var(--color-light-brown);
+  font-size: 75px;
+  line-height: 0;
+}
+/* Estilo para adicionar padding */
+.add-padding {
+  padding: 25px;
+}
+/* Estilo para texto centralizado */
+.center-text {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 30px;
   color: rgb(255, 255, 255);
 }
 
-.navbutton a {
- 
-  text-decoration: none;
-  
-}
-ul {
-  list-style: none; /* Remove os marcadores de todas as <ul> */
-  padding: 0; /* Remove o padding padrão */
-  margin: 0; /* Remove a margem padrão */
+.center-text h2 {
+  margin-top: 25px;
+  line-height: 0;
 }
 
-.nav-link:focus
- {
-  color: white; /* Garante que a cor permaneça branca após o clique */
+.center-text p {
+  margin-top: 0;
+  font-family: var(--font-pt-sans);
+  line-height: 1.5;
 }
 
-.nav-link:hover {
-  color: #f0a500; 
+.center-text a {
+  font-family: var(--font-pt-sans);
+  color: var(--color-light-brown);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-bottom: solid 2px var(--color-light-brown);
+}
+/* Estilo para flexbox */
+.add-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-flex .stuffed-cherries {
+  background: url('https://s-media-cache-ak0.pinimg.com/736x/61/b1/98/61b19844448b2bad5c78e9a2c6347986.jpg') no-repeat center center;
+  background-size: cover;
+  height: 315px;
+  width: 320px;
+}
+/* Estilo para títulos centralizados */
+.center-h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-h1 {
+  text-align: center;
+  color: var(--color-white);
+  letter-spacing: 5px;
+  margin-bottom: 0;
+}
+
+.custom-h1 span {
+  letter-spacing: 0;
+}
+
+/* Estilo para seções com fundo */
+.bread-background {
+  background: var(--color-black) url('http://www.performerprosites.com/development/clients/showpalace/wp-content/uploads/2014/05/tasteful-recipies-dinner-theatre.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 500px;
+}
+
+/* Estilo para a seção de menu */
+.menu  {
+  padding: 30px;
+
+}
+
+.menu-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.menu-images img {
+  width: 100%;
+}
+
+/* Estilo para a seção "The Perfect Blend" */
+.cake-background {
+  background: var(--color-black) url('http://www.rustiquerichmond.co.uk/wp-content/uploads/2014/06/desert.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 500px;
+}
+
+/* Estilo para a seção "Culinary Delight" */
+.reservation-section {
+  margin-bottom: 40px;
+}
+
+.reservation-section div:first-child {
+  flex: 1;
+}
+
+.reservation-section div:last-child {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  flex: 1;
+}
+
+.reservation-section div:last-child img {
+  margin: auto;
+  width: 85%;
+}
+/* Estilo para o rodapé */
+footer {
+  margin: 0;
+  position: relative;
+  background: var(--color-dark-gray); /* Fundo escuro */
+  color: var(--color-light-gray); /* Texto claro */
+
+  button {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    background: var(--color-white); /* Botão com fundo branco */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    line-height: 1.2;
+    border-radius: 50%; /* Botão circular */
+    margin-top: 0;
+  }
+
+  h4 {
+    margin-bottom: 0;
+  }
+
+  h5 {
+    line-height: 1.5;
+  }
+
+  .restaurant-info {
+    padding: 35px 40px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .copyright {
+    background: var(--color-light-gray); /* Fundo claro */
+    color: rgb(150, 150, 150); /* Texto cinza */
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    span {
+      border-bottom: solid 1px;
+    }
+  }
+}
+
+
+/* Consultas de mídia para responsividade */
+@media screen and (max-width: 425px) {
+  header, .bread-background, .cake-background {
+    background-attachment: scroll; 
+  }
+}
+
+@media (min-width: 768px) {
+  footer {
+    .restaurant-info {
+      flex-direction: row; 
+      justify-content: space-around; 
+      align-items: flex-start; 
+    }
+  }
+}
+
+
+
+@media (min-width: 769px) {
+
+  nav {
+    
+    position: initial !important; /* Remove o comportamento fixo */
+    align-items: baseline;
+    padding: 20px 70px !important;
+  }
+
+  nav .nav-button {
+    
+    display: none; /* Esconde o botão de menu em telas maiores */
+  }
+
+  nav div {
+    
+    position: initial !important;
+    background: none !important;
+    opacity: initial !important;
+    transform: initial !important;
+  }
+
+  nav ul {
+    display: none !important;
+    position: initial !important;
+    flex-direction: row !important; /* Alinha os itens em linha */
+  }
+
+  nav ul .exit-menu {
+    display: none; /* Esconde o botão de saída do menu */
+  }
+
+  nav ul li a {
+    font-size: 12.8px;
+    margin: 0 10px;
+    letter-spacing: 1px;
+    padding: 5px 0 !important;
+  }
+
+  nav ul li a.active {
+    border-bottom: solid 1px var(--color-light-gray); /* Adiciona uma borda inferior ao item ativo */
+  }
+
+  .add-padding {
+    padding: 50px 0;
+  }
+
+  .add-flex {
+    flex-direction: row; /* Alinha os itens em linha */
+    align-items: center;
+  }
+
+  .add-flex div:first-child {
+    flex: 1;
+    padding: 0 50px;
+  }
+
+  .add-flex div:last-child {
+    min-width: 400px;
+    margin: 50px;
+  }
+
+  .menu-images {
+    flex: 1;
+  }
+
+  .menu-images div:last-child {
+    flex: 1;
+  }
+
+  footer {
+    .restaurant-info {
+      padding: 20px 80px;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    .restaurant-info .locations,
+    .restaurant-info .hours {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .restaurant-info .locations h4,
+    .restaurant-info .hours h4 {
+      flex: 1 0 100%;
+    }
+
+    .copyright {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+}
+
+footer {
+  color: aliceblue;
+  .restaurant-info {
+    padding: 20px 80px;
+    flex-direction: row;
+    justify-content: space-around;
+
+    .locations,
+    .hours {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      h4 {
+        flex: 1 0 100%; /* Faz os títulos ocuparem toda a largura */
+      }
+    }
+  }
+
+  .copyright {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+#asterisk {
+  opacity: 0;
+  transform-origin: 50% 4%;
+  animation: spin 0.5s forwards;
+  animation-delay: 0.3s;
+}
+
+#asterisk::before,
+#asterisk::after {
+  transform-origin: center center;
+  animation: grow 0.5s forwards;
+  animation-delay: 0.8s;
+}
+
+.center p {
+  transform: translateY(-40px);
+  opacity: 0;
+  animation: fadeDown 0.9s forwards;
+  animation-delay: 1.3s;
+}
+
+.center h2 {
+  transform: scale(2);
+  opacity: 0;
+  animation: fade 0.5s forwards;
+}
+
+.center h1 {
+  transform: translateY(40px);
+  opacity: 0;
+  animation: fadeUp 0.5s forwards;
+  animation-delay: 0.3s;
+}
+
+/* Keyframes */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade {
+  0% {
+    transform: scale(2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes grow {
+  0% {
+    opacity: 0;
+    width: 0%;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    width: 40%;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 1;
+  }
 }

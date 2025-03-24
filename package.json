@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "bootstrap": "^5.3.3",
     "hamburger-react": "^2.5.2",
     "next": "^15.2.3",
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@types/aos": "^3.0.7",
     "@types/node": "20.17.24",
     "@types/react": "19.0.12",
     "@types/react-dom": "^19",
