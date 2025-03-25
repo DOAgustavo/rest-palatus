@@ -10,7 +10,8 @@ export default function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleNavButtonClick = () => {
-    setMenuOpen(true); // Abre o menu
+    console.log("Menu button clicked");
+    setMenuOpen(!menuOpen); // Abre o menu
   };
 
   const handleExitMenuClick = () => {
@@ -37,7 +38,7 @@ export default function HomePage() {
               Palatus
             </a>
           </h2>
-          <button className="nav-button fa fa-bars" onClick={handleNavButtonClick}></button>
+          <button className="nav-button fa fa-bars" onClick={handleNavButtonClick}>  ☰</button>
 <div className={menuOpen ? "show" : ""}>
 <ul>
   <button className="exit-menu fa fa-times" onClick={handleExitMenuClick}></button>
@@ -105,30 +106,14 @@ export default function HomePage() {
 
       <section className="menu add-flex add-padding">
         <div className="menu-images">
-          <img
-            src="http://www.konoba-mirakul.com/wp-content/uploads/2015/03/delikatesa4.jpg"
-            data-aos="fade-down"
-            data-aos-delay="300"
-            alt="Menu item 1"
-          />
-          <img
-            src="http://www.konoba-mirakul.com/wp-content/uploads/2015/03/delikatesa21.jpg"
-            data-aos="fade-left"
-            data-aos-delay="300"
-            alt="Menu item 2"
-          />
+         
           <img
             src="https://www.gourmetsociety.co.uk/uploads/images/restaurants/093ce538894c95892f62dc93bb023636-image.png"
             data-aos="fade-right"
             data-aos-delay="300"
             alt="Menu item 3"
           />
-          <img
-            src="http://retrokitchenbar.com/wp-content/uploads/2014/05/menu-thumb-4-300x218.jpg"
-            data-aos="fade-up"
-            data-aos-delay="300"
-            alt="Menu item 4"
-          />
+          
         </div>
         <div className="center-text">
           <h1>

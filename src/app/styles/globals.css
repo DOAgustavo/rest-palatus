@@ -56,179 +56,144 @@ ul {
 /* Estilo para o cabeçalho */
 /* Estilo para o cabeçalho */
 header {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent),
-    url('http://zigis.com.au/wp-content/uploads/2014/05/holiday2013_front.jpg') no-repeat center center;
-  background-size: cover;
+  min-height:100vh;
+   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent),
+      url('http://zigis.com.au/wp-content/uploads/2014/05/holiday2013_front.jpg') no-repeat center center;nd-size:cover;
   background-attachment: fixed;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: var(--color-white);
+  display:flex;
+  flex-direction:column;
+  /*
+    NAV
+  */
+  nav {
+    padding:15px 35px;
+    display:flex;
+    position:relative;
+    h2 {
+      margin-bottom:0;
+      flex:1;
+      letter-spacing:3px;
+      font-family: var(--font-overpass-mono) !important;
+      #logo {
+        color:lightgray;
+        text-transform:uppercase;
+        border-bottom:solid 2px lightgray;
+      }
+    }
+    .nav-button {
+       color:lightgray;
+      color: #c0c0c0;
+      font-size:23px;
+    }
+    div {
+      background: rgba(0, 0, 0, 0.9);
+      position: fixed;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 1000; /* Certifique-se de que o menu está acima de outros elementos */
+      text-align: center;
+      transform: scale(0);
+      opacity: 0;
+      transition: opacity 0.2s, transform 0.2s;
+      display: flex; /* Adiciona flexbox para centralizar */
+      justify-content: center; /* Centraliza horizontalmente */
+      align-items: center; /* Centraliza verticalmente */
+      ul {
+        position:relative;
+        height:100%;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+         /* Espaçamento entre os itens */
+        .exit-menu {
+          position:absolute;
+          top:15px;
+          right:15px;
+          color:lightgray;
+          font-size:20px;
+          padding:10px;
+          z-index: 1001; /* Certifique-se de que o botão de saída está acima do menu */
+          cursor: pointer;
+        }
+        li {
+          font-family: var(--font-pt-sans)!important;
+          text-transform:uppercase;
+          a {
+            display:block;
+            color:lightgray;
+            padding:15px 5px;
+            transition: all .4s;
+            &:hover, .active:hover {
+              color: var(--color-light-brown);
+              border-bottom-color:  var(--color-light-brown);
+            }
+          }
+        }
+      }
+    }
+  }
+  .alex-brush {
+    font-family: var(--font-alex-brush) !important;
+ }
+  /*
+    CENTER HEADER TEXT
+  */
+  .center {
+    line-height:0;
+    margin:auto;
+    text-align:center;
+    color:var(--color-white);
+    h1 {
+      font-family:var(--font-alex-brush) !important;
+      color:var(--color-light-brown);
+      font-size:80px;
+      margin-bottom:34px;
+    }
+    h2 {
+      text-transform:uppercase;
+      letter-spacing:5px;
+      font-size:28px;
+    }
+    #asterisk {
+      color:var(--color-light-brown);
+      line-height:0.5;
+      font-size:30px;
+      display:flex;
+      justify-content:center;
+      &:before,&:after {
+        content:"";
+        display:inline-block;
+        position:relative;
+        vertical-align:middle;
+        height:1px;
+         width:40%;
+        width: 0%;
+        opacity: 0;
+        background:var(--color-white);
+      }
+      &:before {
+        margin-right:10px;
+      }
+      &:after {
+        margin-left:10px;
+      }
+    }
+    p {
+      text-transform:uppercase;
+      margin-top:5px;
+      font-size:14px;
+      font-weight:bold;
+      letter-spacing:3px;
+    }
+  }
 }
-
-/* Estilo para o menu de navegação */
-nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  color: var(--color-white);
-  padding: 15px 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-nav ul {
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
-
-nav li {
-  list-style: none; /* Remove os marcadores da lista */
-}
-
-nav a {
-  font-family: var(--font-overpass-mono);
-  color: var(--color-white); /* Define o texto dos links como branco */
-  text-transform: uppercase;
-  padding: 10px;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: var(--color-light-brown); /* Cor ao passar o mouse */
-}
-
 nav div.show {
-  transform: scale(1);
-  opacity: 1;
+   /* AQUI FICA PARA ATIVAR OU DESATIVAR !*/
+  transform:scale(1);
+  opacity:1;
 }
-
-/* Esconde o botão hambúrguer em telas grandes */
-.nav-button {
-  display: none;
-}
-
-/* Responsividade para telas menores */
-@media screen and (max-width: 768px) {
-  header {
-    min-height: 50vh; /* Reduz a altura mínima */
-    background-size: contain; /* Ajusta o tamanho do fundo */
-  }
-
-  nav {
-    flex-direction: column; /* Alinha os itens verticalmente */
-    padding: 10px;
-  }
-
-  nav ul {
-    flex-direction: column; /* Lista em coluna */
-    gap: 10px;
-  }
-
-  nav a {
-    font-size: 14px; /* Reduz o tamanho da fonte */
-    padding: 8px; /* Ajusta o espaçamento interno */
-  }
-
-  /* Exibe o botão hambúrguer em telas menores */
-  .nav-button {
-    display: block;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: var(--color-white);
-    cursor: pointer;
-    z-index: 1001; /* Certifique-se de que o botão está acima de outros elementos */
-  }
-}
-
-/* Responsividade para telas muito pequenas */
-@media screen and (max-width: 425px) {
-  header {
-    min-height: 40vh; /* Reduz ainda mais a altura mínima */
-    text-align: center; /* Centraliza o texto */
-  }
-
-  nav {
-    padding: 5px;
-  }
-
-  nav ul {
-    gap: 5px; /* Reduz o espaçamento entre os itens */
-  }
-
-  nav a {
-    font-size: 12px; /* Reduz o tamanho da fonte */
-    padding: 5px; /* Ajusta o espaçamento interno */
-  }
-}
-/* Estilo para o conteúdo centralizado */
-.center {
-  line-height: 0;
-  margin: auto;
-  text-align: center;
-  color: var(--color-white);
-}
-
-.center h1 {
-  font-family: var(--font-alex-brush) !important;
-  color: var(--color-light-brown);
-  font-size: 80px;
-  margin-bottom: 34px;
-}
-
-.center h2 {
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  font-size: 28px;
-}
-/* Estilo para o asterisco decorativo */
-.center #asterisk {
-  color: var(--color-light-brown);
-  line-height: 0.5;
-  font-size: 30px;
-  display: flex;
-  justify-content: center;
-}
-
-.center #asterisk:before,
-.center #asterisk:after {
-  content: "";
-  display: inline-block;
-  position: relative;
-  vertical-align: middle;
-  height: 1px;
-  width: 0%;
-  opacity: 0;
-  background: var(--color-white);
-}
-
-.center #asterisk:before {
-  margin-right: 10px;
-}
-
-.center #asterisk:after {
-  margin-left: 10px;
-}
-/* Estilo para parágrafos centralizados */
-.center p {
-  text-transform: uppercase;
-  margin-top: 5px;
-  font-size: 14px;
-  font-weight: bold;
-  letter-spacing: 3px;
-}    
-
 /* Estilo para fontes personalizadas */
 .custom-font {
   font-family: var(--font-alex-brush);
@@ -445,7 +410,7 @@ footer {
   }
 
   nav div {
-    
+   
     position: initial !important;
     background: none !important;
     opacity: initial !important;
@@ -453,14 +418,12 @@ footer {
   }
 
   nav ul {
-    display: none !important;
+  
     position: initial !important;
     flex-direction: row !important; /* Alinha os itens em linha */
   }
 
-  nav ul .exit-menu {
-    display: none; /* Esconde o botão de saída do menu */
-  }
+ 
 
   nav ul li a {
     font-size: 12.8px;
@@ -641,5 +604,40 @@ footer {
   100% {
     transform: rotate(360deg);
     opacity: 1;
+  }
+}
+
+nav div.show {
+  transform: scale(1);
+  opacity: 1;
+}
+
+nav ul .exit-menu {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: lightgray;
+  font-size: 20px;
+  padding: 10px;
+  z-index: 1001; /* Certifique-se de que o botão de saída está acima do menu */
+  cursor: pointer;
+}
+
+.nav-button {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-button {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--color-white);
+    cursor: pointer;
+    z-index: 1002; /* Certifique-se de que o botão hambúrguer está acima de outros elementos */
   }
 }
