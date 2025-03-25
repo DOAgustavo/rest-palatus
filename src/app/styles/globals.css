@@ -274,27 +274,27 @@ nav div.show {
   margin-bottom: 0;
 }
 
-
+/* menu letrar important */
 #menu-section ul {
-  list-style: none; 
+  list-style: none; /* Remove os marcadores da lista */
   padding: 0;
   margin: 20px 20px;
-   
+   /* Alinha os itens à direita */
 }
 
 #menu-section ul li {
   margin-bottom: 15px; 
   font-size: 16px;
   line-height: 1.6; 
-  padding-right: 10px; 
+  padding-right: 10px; /* Adiciona uma pequena distância da borda direita */
 }
 
 #menu-section ul li strong {
-  color: var(--color-light-brown); 
-  font-size: 18px; 
-  font-weight: bold; 
-  text-transform: uppercase; 
-  letter-spacing: 1px;
+  color: var(--color-light-brown); /* Cor de destaque */
+  font-size: 18px; /* Aumenta o tamanho da fonte */
+  font-weight: bold; /* Deixa o texto mais forte */
+  text-transform: uppercase; /* Transforma o texto em maiúsculas */
+  letter-spacing: 1px; /* Adiciona espaçamento entre as letras */
 }
 /* ---------------------------- */
 
@@ -585,6 +585,19 @@ footer {
   opacity: 0;
   animation: fadeUp 0.5s forwards;
   animation-delay: 0.3s;
+  font-size: 3rem; /* Ajuste o tamanho da fonte, se necessário */
+  margin-bottom: 5px; /* Espaçamento entre o título e o subtítulo */
+}
+
+.center h2 {
+  font-size: 1.5rem; /* Ajuste o tamanho da fonte, se necessário */
+  margin-bottom: 10px; /* Espaçamento entre o subtítulo e a linha */
+}
+
+.center #asterisk {
+  display: block;
+  margin: 5px auto; /* Espaçamento entre a linha e o texto abaixo */
+  font-size: 1.2rem; /* Ajuste o tamanho da linha */
 }
 
 /* Keyframes */
