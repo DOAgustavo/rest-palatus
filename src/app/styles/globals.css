@@ -13,14 +13,18 @@
 }
 /* Estilo global para o corpo da página */
 body {
-  
   font-family: var(--font-pt-sans);
   color: var(--color-white);
   background-color: var(--color-dark-gray);
-  overflow-x: hidden;
+  overflow-x: hidden; /* Remove a rolagem horizontal */
   margin: 0;
   padding: 0;
 }
+
+html {
+  overflow-x: hidden; /* Remove a rolagem horizontal */
+}
+
 /* Estilo para cabeçalhos */
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -57,14 +61,23 @@ ul {
 /* Estilo para o cabeçalho */
 header {
   min-height:100vh;
-   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent),
-      url('http://zigis.com.au/wp-content/uploads/2014/05/holiday2013_front.jpg') no-repeat center center;nd-size:cover;
-  background-attachment: fixed;
-  display:flex;
-  flex-direction:column;
+  min-height: 100vh; /* Garante que o header ocupe 100% da altura da tela */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent),
+    url('http://zigis.com.au/wp-content/uploads/2014/05/holiday2013_front.jpg') no-repeat center center;
+  background-size: cover; /* Corrige o erro de digitação */
+  background-attachment: fixed; /* Mantém o fundo fixo ao rolar */
+  display: flex;
+  flex-direction: column;
   /*
     NAV
   */
+  nav div ul li a {
+    font-size: 18px; /* Ajuste o tamanho da fonte aqui */
+    color: lightgray;
+    padding: 15px 5px;
+    text-transform: uppercase;
+    transition: all 0.4s;
+  }
   nav {
     padding:15px 35px;
     display:flex;
@@ -100,6 +113,7 @@ header {
       display: flex; /* Adiciona flexbox para centralizar */
       justify-content: center; /* Centraliza horizontalmente */
       align-items: center; /* Centraliza verticalmente */
+      overflow: hidden; /* Garante que o menu não cause rolagem */
       ul {
         position:relative;
         height:100%;
@@ -634,10 +648,20 @@ nav ul .exit-menu {
     top: 10px;
     right: 10px;
     background: none;
-    border: none;
+    border: none; /* Remove qualquer borda */
+    outline: none; /* Remove o contorno ao clicar */
     font-size: 24px;
     color: var(--color-white);
     cursor: pointer;
     z-index: 1002; /* Certifique-se de que o botão hambúrguer está acima de outros elementos */
+  }
+
+  .nav-button:focus {
+    outline: none; /* Remove o contorno ao focar */
+  }
+
+  .nav-button:active {
+    outline: none; /* Remove o contorno ao clicar */
+    border: none; /* Remove qualquer borda ao clicar */
   }
 }
