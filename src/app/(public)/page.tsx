@@ -58,22 +58,22 @@ export default function HomePage() {
                 </a>
               </li>
               <li>
-                <a
-                  href="#about-section"
-                  onClick={() => {
-                    const aboutSection =
-                      document.getElementById("about-section");
-                    if (aboutSection) {
-                      aboutSection.scrollIntoView({
-                        behavior: "smooth",
-                        block: "center",
-                      });
-                    }
-                    setMenuOpen(false); // Fecha o menu após o clique
-                  }}
-                >
-                  Sobre Nós
-                </a>
+              <a
+  href="#about-section"
+  onClick={(e) => {
+    e.preventDefault(); // Evita o comportamento padrão do link
+    const aboutSection = document.getElementById("about-section");
+    if (aboutSection) {
+      aboutSection.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+    setMenuOpen(false); // Fecha o menu após o clique
+  }}
+>
+  Sobre Nós
+</a>
               </li>
               <li>
                 <a

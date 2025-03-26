@@ -63,7 +63,7 @@ header {
   min-height:100vh;
   min-height: 100vh; /* Garante que o header ocupe 100% da altura da tela */
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent),
-    url('/img/tela.png') no-repeat center center;
+    url('/img/brown.png') no-repeat center center;
   background-size: cover; /* Corrige o erro de digitação */
   background-attachment: fixed; /* Mantém o fundo fixo ao rolar */
   display: flex;
