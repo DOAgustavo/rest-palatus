@@ -435,6 +435,7 @@ footer {
 
 @media (min-width: 769px) {
 
+ 
   nav {
     
     position: initial !important; /* Remove o comportamento fixo */
