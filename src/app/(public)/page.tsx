@@ -226,7 +226,7 @@ export default function HomePage() {
 
             <div className="private-events">
               <h5>
-              Disponível para eventos
+              Disponível para eventos privados
               
               
 
