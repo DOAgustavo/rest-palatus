@@ -5,7 +5,7 @@ import "../../app/styles/globals.css";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
+import Head from 'next/head';
 
 export default function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -32,6 +32,9 @@ export default function HomePage() {
 
   return (
     <>
+      <Head>
+        <title>Restaurante Palatus</title>
+      </Head>
       <header>
         <nav>
           <h2>
