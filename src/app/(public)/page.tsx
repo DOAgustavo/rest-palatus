@@ -120,7 +120,7 @@ export default function HomePage() {
         </nav>
         <div className="center">
           <h1 className="alex-brush">Bem Vindo</h1>
-          <h2 style={{ fontSize: '1.5rem', textAlign: 'center', margin: '10px 0' }}>Restaurante Palatus</h2>
+          <h2 >Restaurante Palatus</h2>
           <span id="asterisk">*</span>
           <p>Prontos para lhe atender</p>
         </div>

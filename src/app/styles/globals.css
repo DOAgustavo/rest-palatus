@@ -166,9 +166,14 @@ header {
       margin-bottom:34px;
     }
     h2 {
-      text-transform:uppercase;
-      letter-spacing:5px;
-      font-size:28px;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-size: 28px;
+      margin-bottom: 10px;
+      white-space: normal; /* Permite que o texto quebre em várias linhas */
+      word-wrap: break-word; /* Garante que palavras longas sejam quebradas */
+      overflow-wrap: break-word; /* Compatibilidade adicional para quebra de palavras */
+      text-align: center; /* Centraliza o texto */
     }
     #asterisk {
       color:var(--color-light-brown);
@@ -576,9 +581,14 @@ footer {
 }
 
 .center h2 {
-  transform: scale(2);
-  opacity: 0;
-  animation: fade 0.5s forwards;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 28px;
+  margin-bottom: 10px;
+  white-space: normal; /* Permite que o texto quebre em várias linhas */
+  word-wrap: break-word; /* Garante que palavras longas sejam quebradas */
+  overflow-wrap: break-word; /* Compatibilidade adicional para quebra de palavras */
+  text-align: center; /* Centraliza o texto */
 }
 
 .center h1 {
@@ -702,5 +712,12 @@ nav ul .exit-menu {
   .nav-button:active {
     outline: none; /* Remove o contorno ao clicar */
     border: none; /* Remove qualquer borda ao clicar */
+  }
+
+  .center h2 {
+    font-size: 20px; /* Reduz o tamanho da fonte em telas pequenas */
+    letter-spacing: 2px; /* Reduz o espaçamento entre as letras */
+    line-height: 1.4; /* Ajusta o espaçamento entre as linhas */
+    padding: 0 10px; /* Adiciona um padding para evitar que o texto encoste nas bordas */
   }
 }
