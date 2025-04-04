@@ -33,7 +33,12 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title>Restaurante Palatus</title>
+        <title>Restaurante Palatus | Melhor Comida Caseira da Cidade</title>
+        <meta
+          name="description"
+          content="Restaurante Palatus: pratos deliciosos, ambiente aconchegante e atendimento impecável. Venha nos conhecer!"
+        />
+        <link rel="icon" href="/brown.png" type="image/png" />
       </Head>
       <header>
         <nav>
@@ -61,22 +66,23 @@ export default function HomePage() {
                 </a>
               </li>
               <li>
-              <a
-  href="#about-section"
-  onClick={(e) => {
-    e.preventDefault(); // Evita o comportamento padrão do link
-    const aboutSection = document.getElementById("about-section");
-    if (aboutSection) {
-      aboutSection.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
-    }
-    setMenuOpen(false); // Fecha o menu após o clique
-  }}
->
-  Sobre Nós
-</a>
+                <a
+                  href="#about-section"
+                  onClick={(e) => {
+                    e.preventDefault(); // Evita o comportamento padrão do link
+                    const aboutSection =
+                      document.getElementById("about-section");
+                    if (aboutSection) {
+                      aboutSection.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center",
+                      });
+                    }
+                    setMenuOpen(false); // Fecha o menu após o clique
+                  }}
+                >
+                  Sobre Nós
+                </a>
               </li>
               <li>
                 <a
@@ -98,22 +104,22 @@ export default function HomePage() {
               </li>
 
               <li>
-              <a
-  href="https://wa.me/554797090916"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <FaWhatsapp size={25} />
-</a>
+                <a
+                  href="https://wa.me/554797090916"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaWhatsapp size={25} />
+                </a>
               </li>
               <li>
-              <a
-  href="https://www.instagram.com/romaniepalatuspizzaria/"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <FaInstagram size={25} />
-</a>
+                <a
+                  href="https://www.instagram.com/romaniepalatuspizzaria/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaInstagram size={25} />
+                </a>
               </li>
             </ul>
           </div>
@@ -135,7 +141,7 @@ export default function HomePage() {
           </h1>
           <h4>*</h4>
           <p>
-            O Restaurante Palatus nasceu do sonho de uma família apaixonada
+            O  Restaurante Palatus nasceu do sonho de uma família apaixonada
             pela culinária e pela arte de bem receber. Fundado em 1995, o
             restaurante começou como um pequeno negócio familiar, onde receitas
             tradicionais eram preparadas com amor e dedicação, seguindo os
