@@ -6,6 +6,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
+      <head>
+        <meta name="robots" content="index, follow" />
+      </head>
       <body>
       {children}
       </body>
